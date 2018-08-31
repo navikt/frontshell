@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('dotenv').config();
+require('./loadenv');
 
 const express = require('express');
 const path = require('path');
