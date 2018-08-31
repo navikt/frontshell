@@ -40,6 +40,10 @@ const startServer = (html) => {
     res.send(html);
   });
 
+  server.get('/', (req, res) => {
+    res.send(html);
+  });
+
   server.use(express.static(process.env.WEB_ROOT, {index: false}));
 
   server.get('/health/isAlive', (req, res) => res.sendStatus(200));

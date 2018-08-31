@@ -2,14 +2,14 @@
   "name": "frontshell",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/js/NavApp.js",
+  "main": "lib/NavApp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf ./lib",
     "build": "babel src -d lib"
   },
   "bin": {
-    "decorated": "./lib/js/bin/decorated.js"
+    "decorated": "./lib/bin/decorated.js"
   },
   "files": [
     "/src",
