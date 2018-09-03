@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-require('dotenv').config();
+require('./loadenv');
 
 const express = require('express');
 const path = require('path');
@@ -37,6 +37,10 @@ const startServer = (html) => {
   // server.use(delayAllResponses(1000));
 
   server.get('/index.html', (req, res) => {
+    res.send(html);
+  });
+
+  server.get('/', (req, res) => {
     res.send(html);
   });
 

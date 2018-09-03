@@ -10,7 +10,7 @@ addLocaleData([...nb, ...en, ...nn]);
 class NavApp extends Component {
   render () {
     return (
-      <IntlProvider locale={this.props.defaultSprak} messages={this.props.loadMessages()[this.props.defaultSprak]}>
+      <IntlProvider locale={this.props.defaultSprak} messages={this.props.messages[this.props.defaultSprak]}>
         {this.props.children}
       </IntlProvider>
     );
