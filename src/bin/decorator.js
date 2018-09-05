@@ -3,10 +3,6 @@ const request = require('request');
 
 const { JSDOM } = jsdom;
 
-const fs = require('fs');
-
-const settings = process.env.FRONTSHELL_SETTINGS_PATH ? fs.readFileSync(process.env.FRONTSHELL_SETTINGS_PATH, 'utf8') : null;
-
 const requestDecorator = callback =>
   request(
     `${
@@ -27,7 +23,6 @@ const getDecorator = () =>
         const prop = 'innerHTML';
 
         const data = {
-          FRONTSHELL_SETTINGS: `<script>${eval(settings)}</script>`,
           NAV_SKIPLINKS: document.getElementById('skiplinks')[prop],
           NAV_SCRIPTS: document.getElementById('scripts')[prop],
           NAV_STYLES: document.getElementById('styles')[prop],
