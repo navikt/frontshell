@@ -14,7 +14,7 @@ const server = express();
 const renderEnvSettingsFile = (settingsJsonFile, settingsName) => {
   if (settingsJsonFile && settingsName) {
     const data = JSON.parse(settingsJsonFile);
-    return `window.${settingsName} = {${data.map((entry) => `{${entry}: '${process.env[entry]}'}`)}}`;
+    return `window.${settingsName} = {${data.map((entry) => `${entry}: '${process.env[entry]}'`)}}`;
   } else {
     return '// settings file or|and settings outout property name is undefined';
   }
@@ -59,7 +59,7 @@ const startServer = (html) => {
 
   server.get('/settings.js', (req, res) => {
     const settingsPath = process.env.FRONTSHELL_SETTINGS_PATH ? fs.readFileSync(process.env.FRONTSHELL_SETTINGS_PATH, 'utf8') : null;
-    const settingsName = process.env.FRONTSHELL_SETTINGS_NAME ? process.env.FRONTSHELL_SETTINGS_PATH : DEFAULT_SETTINGS_PROPERTY_NAME;
+    const settingsName = process.env.FRONTSHELL_SETTINGS_NAME ? process.env.FRONTSHELL_SETTINGS_NAME : DEFAULT_SETTINGS_PROPERTY_NAME;
     res.send(renderEnvSettingsFile(settingsPath, settingsName));
   });
 
