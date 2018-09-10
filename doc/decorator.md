@@ -30,6 +30,11 @@
   }
 ```
 
+### `settings.json`
+```json
+  ["HELLO_FRONT_SHELL", "APPRES_CMS_URL"]
+```
+
 ### `index.html`
 ```html
   <html>
