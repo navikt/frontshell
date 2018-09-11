@@ -1,19 +1,20 @@
 {
   "name": "frontshell",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "",
-  "main": "lib/NavApp.js",
+  "main": "dist/NavApp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf ./lib",
-    "build": "babel src -d lib"
+    "clean": "rimraf ./dist",
+    "build": "babel src -d dist"
   },
   "bin": {
-    "decorated": "./lib/bin/decorated.js"
+    "decorated": "./dist/bin/decorated.js",
+    "undecorated": "./dist/bin/undecorated.js"
   },
   "files": [
     "/src",
-    "/lib"
+    "/dist"
   ],
   "author": "NAV",
   "license": "MIT",

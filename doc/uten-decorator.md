@@ -22,8 +22,8 @@
   {
     ...
     "scripts": {
-      "server-dev": "NODE_ENV=development decorated", // bruk .env.development filen for å kjøre det lokalt
-      "server": "decorated",
+      "server-dev": "NODE_ENV=development undecorated", // bruk .env.development filen for å kjøre det lokalt
+      "server": "undecorated",
       ...
     },
     ...
@@ -38,24 +38,12 @@
 ### `index.html`
 ```html
   <html>
-
     <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      {{{NAV_SCRIPTS}}}
-      {{{NAV_STYLES}}}
-      {{{MEGAMENU_RESOURCES}}}
       <script type="text/javascript" src="/settings.js"></script>
     </head>
-
     <body>
-      <div class="pagewrapper">
-          {{{NAV_SKIPLINKS}}}
-          {{{NAV_HEADING}}}
-          <div id="root"></div>
-      </div>
-      {{{NAV_FOOTER}}}
+      <div id="root"></div>
     </body>
-
   </html>
 ```
 
