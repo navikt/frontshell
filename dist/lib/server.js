@@ -7,11 +7,7 @@ var mustacheExpress = require('mustache-express');
 var getServer = function getServer() {
   var server = express();
 
-  var DEFAULT_SETTINGS_PROPERTY_NAME = 'frontShellSettings';
-
-  var INDEX_FILE_DIR = process.env.INDEX_FILE_DIR;
-
-  server.set('views', INDEX_FILE_DIR);
+  server.set('views', process.env.WEB_ROOT || 'build');
   server.set('view engine', 'mustache');
   server.engine('html', mustacheExpress());
 

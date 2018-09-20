@@ -29,11 +29,11 @@ var startServer = function startServer(server, html) {
 
   server.get('/settings.js', function (req, res) {
     var settingsPath = process.env.FRONTSHELL_SETTINGS_PATH ? fs.readFileSync(process.env.FRONTSHELL_SETTINGS_PATH, 'utf8') : null;
-    var settingsName = process.env.FRONTSHELL_SETTINGS_NAME ? process.env.FRONTSHELL_SETTINGS_NAME : DEFAULT_SETTINGS_PROPERTY_NAME;
+    var settingsName = process.env.FRONTSHELL_SETTINGS_NAME ? process.env.FRONTSHELL_SETTINGS_NAME : null;
     res.send(renderEnvSettingsFile(settingsPath, settingsName));
   });
 
-  server.use(express.static(process.env.WEB_ROOT, { index: false }));
+  server.use(express.static(process.env.WEB_ROOT || 'build', { index: false }));
 
   server.get('/health/isAlive', function (req, res) {
     return res.sendStatus(200);
