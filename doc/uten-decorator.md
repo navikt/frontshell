@@ -11,7 +11,6 @@
 
   FRONTSHELL_SETTINGS_PATH=settings.json
   FRONTSHELL_SETTINGS_NAME=frontShellExample
-  INDEX_FILE_DIR=build
   WEB_ROOT=build
 
   HELLO_FRONT_SHELL=Hi there

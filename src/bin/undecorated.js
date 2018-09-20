@@ -5,10 +5,11 @@ require('../lib/loadenv');
 
 const server = require('../lib/server');
 const startServer = require('../lib/startServer');
+const getFrontendLoggerInjectedScript = require('../lib/fo-frontendlogger');
 
 const renderApp = () =>
   new Promise((resolve, reject) => {
-    server.render('index.html', {}, (err, html) => {
+    server.render('index.html', {NAV_FO_LOGGER: getFrontendLoggerInjectedScript(APP_NAME, FO_LOGGER_URL)}, (err, html) => {
       if (err) {
         reject(err);
       } else {
