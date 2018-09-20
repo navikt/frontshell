@@ -13,7 +13,7 @@ var getFrontendLoggerInjectedScript = require('../lib/fo-frontendlogger');
 
 var renderApp = function renderApp(server, decoratorFragments) {
   return new Promise(function (resolve, reject) {
-    server.render('index.html', _extends({}, decoratorFragments, { NAV_FO_LOGGER: getFrontendLoggerInjectedScript(JSON.stringify(APP_NAME), JSON.stringify(FO_LOGGER_URL)) }), function (err, html) {
+    server.render('index.html', _extends({}, decoratorFragments, { NAV_FO_LOGGER: getFrontendLoggerInjectedScript(JSON.stringify(process.env.APP_NAME), JSON.stringify(process.env.FO_LOGGER_URL)) }), function (err, html) {
       if (err) {
         reject(err);
       } else {
