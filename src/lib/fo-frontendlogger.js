@@ -4,7 +4,7 @@ const getFrontendLoggerInjectedScript = (appName, foLoggerUrl) => {
   if (!appName || !foLoggerUrl) {
     return '';
   }
-  return injectedScript = `
+  return `
 <script type="application/javascript">
   // dette her er 'fallback' å brukes når frontendloggeren er nede
   window.frontendlogger = {
