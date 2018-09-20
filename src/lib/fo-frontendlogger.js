@@ -24,7 +24,7 @@ const getFrontendLoggerInjectedScript = (appName, foLoggerUrl) => {
   };
   window.frontendlogger.appname = ${appName};
 </script>
-<script type="application/javascript" src="${foLoggerUrl}"></script>`;
+<script type="application/javascript" src=${foLoggerUrl}></script>`;
 
 };
 
