@@ -4,7 +4,7 @@
 require('../lib/loadenv');
 
 const server = require('../lib/server');
-const startServer = require('../lib/startServer');
+const startServer = require('../lib/start-server');
 const getDecorator = require('../lib/decorator');
 const getFrontendLoggerInjectedScript = require('../lib/fo-frontendlogger');
 

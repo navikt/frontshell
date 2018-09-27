@@ -5,7 +5,7 @@
 require('../lib/loadenv');
 
 var server = require('../lib/server');
-var startServer = require('../lib/startServer');
+var startServer = require('../lib/start-server');
 var getFrontendLoggerInjectedScript = require('../lib/fo-frontendlogger');
 
 var renderApp = function renderApp() {
