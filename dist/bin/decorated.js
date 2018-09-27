@@ -7,7 +7,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 require('../lib/loadenv');
 
 var server = require('../lib/server');
-var startServer = require('../lib/startServer');
+var startServer = require('../lib/start-server');
 var getDecorator = require('../lib/decorator');
 var getFrontendLoggerInjectedScript = require('../lib/fo-frontendlogger');
 
