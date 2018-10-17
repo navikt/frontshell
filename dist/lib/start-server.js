@@ -25,11 +25,11 @@ var startServer = function startServer(server, html) {
     res.send(html);
   });
 
-  server.get('/${CONTEXT_PATH}/', function (req, res) {
+  server.get('/' + CONTEXT_PATH + '/', function (req, res) {
     res.send(html);
   });
 
-  server.get('/${CONTEXT_PATH}/settings.js', function (req, res) {
+  server.get('/' + CONTEXT_PATH + '/settings.js', function (req, res) {
     var settingsPath = process.env.FRONTSHELL_SETTINGS_PATH ? fs.readFileSync(process.env.FRONTSHELL_SETTINGS_PATH, 'utf8') : null;
     var settingsName = process.env.FRONTSHELL_SETTINGS_NAME ? process.env.FRONTSHELL_SETTINGS_NAME : null;
     res.send(renderEnvSettingsFile(settingsPath, settingsName));
@@ -37,10 +37,10 @@ var startServer = function startServer(server, html) {
 
   server.use(express.static(process.env.WEB_ROOT || 'build', { index: false }));
 
-  server.get('/${CONTEXT_PATH}/health/isAlive', function (req, res) {
+  server.get('/' + CONTEXT_PATH + '/health/isAlive', function (req, res) {
     return res.sendStatus(200);
   });
-  server.get('/${CONTEXT_PATH}/health/isReady', function (req, res) {
+  server.get('/' + CONTEXT_PATH + '/health/isReady', function (req, res) {
     return res.sendStatus(200);
   });
 
