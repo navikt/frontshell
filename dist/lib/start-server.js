@@ -35,7 +35,7 @@ var startServer = function startServer(server, html) {
     res.send(renderEnvSettingsFile(settingsPath, settingsName));
   });
 
-  server.use(express.static(process.env.WEB_ROOT || 'build', { index: false }));
+  server.use(CONTEXT_PATH, express.static(process.env.WEB_ROOT || 'build', { index: false }));
 
   server.get('/' + CONTEXT_PATH + '/health/isAlive', function (req, res) {
     return res.sendStatus(200);
