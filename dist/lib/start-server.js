@@ -21,6 +21,13 @@ var startServer = function startServer(server, html) {
 
   var CONTEXT_PATH = process.env.CONTEXT_PATH || '';
 
+  if (process.env.FRONT_SHELL_DEBUG) {
+    server.use(function (req, res, next) {
+      console.log(req.url);
+      next();
+    });
+  }
+
   server.get('/' + CONTEXT_PATH + '/index.html', function (req, res) {
     res.send(html);
   });
