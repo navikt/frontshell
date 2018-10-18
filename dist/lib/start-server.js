@@ -39,7 +39,7 @@ var startServer = function startServer(server, html) {
   server.get(CONTEXT_PATH + '/settings.js', function (req, res) {
     var settingsPath = process.env.FRONTSHELL_SETTINGS_PATH ? fs.readFileSync(process.env.FRONTSHELL_SETTINGS_PATH, 'utf8') : null;
     var settingsName = process.env.FRONTSHELL_SETTINGS_NAME ? process.env.FRONTSHELL_SETTINGS_NAME : null;
-    res.setHeader('Content-Type: application/javascript; charset=UTF-8');
+    res.setHeader('Content-Type', 'application/javascript;charset=UTF-8');
     res.send(renderEnvSettingsFile(settingsPath, settingsName));
   });
 
