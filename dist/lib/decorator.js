@@ -4,10 +4,19 @@ var jsdom = require('jsdom');
 var request = require('request');
 
 var JSDOM = jsdom.JSDOM;
+var _process$env = process.env,
+    APPRES_CMS_URL = _process$env.APPRES_CMS_URL,
+    DECORATOR_PATH = _process$env.DECORATOR_PATH,
+    DECORATOR_FRAGMENT_HEADER_WITHMENU = _process$env.DECORATOR_FRAGMENT_HEADER_WITHMENU,
+    DECORATOR_FRAGMENT_STYLES = _process$env.DECORATOR_FRAGMENT_STYLES,
+    DECORATOR_FRAGMENT_SCRIPTS = _process$env.DECORATOR_FRAGMENT_SCRIPTS,
+    DECORATOR_FRAGMENT_FOOTER_WITH_MENU = _process$env.DECORATOR_FRAGMENT_FOOTER_WITH_MENU,
+    DECORATOR_FRAGMENT_SKIP_LINKS = _process$env.DECORATOR_FRAGMENT_SKIP_LINKS,
+    DECORATOR_FRAGMENT_MEGAMENU_RESOURCES = _process$env.DECORATOR_FRAGMENT_MEGAMENU_RESOURCES;
 
 
 var requestDecorator = function requestDecorator(callback) {
-  return request(process.env.APPRES_CMS_URL + '/common-html/v4/navno?header-withmenu=true&styles=true&scripts=true&footer-withmenu=true&skiplinks=true&megamenu-resources=true', callback);
+  return request('' + APPRES_CMS_URL + DECORATOR_PATH + '?header-withmenu=' + DECORATOR_FRAGMENT_HEADER_WITHMENU + '&styles=' + DECORATOR_FRAGMENT_STYLES + '&scripts=' + DECORATOR_FRAGMENT_SCRIPTS + '&footer-withmenu=' + DECORATOR_FRAGMENT_FOOTER_WITH_MENU + '&skiplinks=' + DECORATOR_FRAGMENT_SKIP_LINKS + '&megamenu-resources=' + DECORATOR_FRAGMENT_MEGAMENU_RESOURCES, callback);
 };
 
 var getDecorator = function getDecorator() {

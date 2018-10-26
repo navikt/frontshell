@@ -52,6 +52,10 @@ var startServer = function startServer(server, html) {
     return res.sendStatus(200);
   });
 
+  app.get('*', function (req, res) {
+    res.send(html);
+  });
+
   var port = process.env.PORT || 8080;
   server.listen(port, function () {
     console.log('App listening on port: ' + port); // eslint-disable-line
