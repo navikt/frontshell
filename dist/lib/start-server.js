@@ -52,7 +52,7 @@ var startServer = function startServer(server, html) {
     return res.sendStatus(200);
   });
 
-  app.get('*', function (req, res) {
+  server.get('*', function (req, res) {
     res.send(html);
   });
 

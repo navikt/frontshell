@@ -46,7 +46,7 @@ const startServer = (server, html) => {
   server.get(`${CONTEXT_PATH}/health/isAlive`, (req, res) => res.sendStatus(200));
   server.get(`${CONTEXT_PATH}/health/isReady`, (req, res) => res.sendStatus(200));
 
-  app.get('*', function(req, res) {
+  server.get('*', function(req, res) {
     res.send(html);
   });
 
