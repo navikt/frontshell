@@ -10,7 +10,7 @@
 
 # Henvendelser
 
-Spørsmål knyttet til koden eller prosjektet kan rettes mot andrii.uvarov@nav.no eller https://github.com/orgs/navikt/teams/team-personbruker
+Spørsmål knyttet til koden eller prosjektet kan rettes mot andrii.uvarov@nav.no eller https://github.com/orgs/navikt/teams/personbruker
 
 ## For NAV-ansatte
 
